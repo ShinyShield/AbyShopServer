@@ -8,7 +8,7 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/spf13/viper v1.15.0
-	github.com/webronin26/shopping-server v0.0.0-20200817165722-fa17ea142b7e
+	github.com/ShinyShield/AbyShopServer v0.0.0-20200817165722-fa17ea142b7e
 )
 
 require (
