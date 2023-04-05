@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	query "github.com/ShinyShield/AbyShop-server/pkg/usecases/query_product"
+	query "github.com/ShinyShield/AbyShopServer/pkg/usecases/query_product"
 	"github.com/labstack/echo"
 )
 

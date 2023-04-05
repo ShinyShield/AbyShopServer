@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/webronin26/shopping-server/config"
-	"github.com/webronin26/shopping-server/pkg/server"
-	"github.com/webronin26/shopping-server/pkg/store"
+	"github.com/ShinyShield/AbyShopServer/config"
+	"github.com/ShinyShield/AbyShopServer/pkg/server"
+	"github.com/ShinyShield/AbyShopServer/pkg/store"
 )
 
 func main() {

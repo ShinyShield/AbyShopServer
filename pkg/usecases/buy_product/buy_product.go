@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/ShinyShield/AbyShop-server/pkg/entities"
-	"github.com/ShinyShield/AbyShop-server/pkg/store"
+	"github.com/ShinyShield/AbyShopServer/pkg/entities"
+	"github.com/ShinyShield/AbyShopServer/pkg/store"
 )
 
 type Input struct {

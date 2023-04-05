@@ -3,9 +3,9 @@ package server
 import (
 	"net/http"
 
-	"github.com/ShinyShield/AbyShop-server/pkg/entities"
-	"github.com/ShinyShield/AbyShop-server/pkg/presenter"
-	"github.com/ShinyShield/AbyShop-server/pkg/store"
+	"github.com/ShinyShield/AbyShopServer/pkg/entities"
+	"github.com/ShinyShield/AbyShopServer/pkg/presenter"
+	"github.com/ShinyShield/AbyShopServer/pkg/store"
 	"github.com/labstack/echo"
 )
 
