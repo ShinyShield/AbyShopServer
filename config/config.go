@@ -28,17 +28,18 @@ type DatabaseConfig struct {
 
 // init database
 func Init() {
-	viper.AutomaticEnv()
-	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-	viper.SetConfigName("config")
-	viper.AddConfigPath(".")
+	v := viper.New()
+	v.AutomaticEnv()
+	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
+	v.SetConfigName("config")
+	v.AddConfigPath(".")
 
-	err := viper.ReadInConfig()
+	err := v.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
 	}
 
-	viper.Unmarshal(&c)
+	v.Unmarshal(&c)
 }
 
 func GetDatabaseConfig() DatabaseConfig {

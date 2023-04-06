@@ -3,7 +3,7 @@ package store
 import (
 	"fmt"
 
-	"github.com/ShinyShield/AbyShopServer/config"
+	"github.com/ShinyShield/AbyShopServ/config"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/ShinyShield/AbyShopServer/config"
-	"github.com/ShinyShield/AbyShopServer/pkg/server"
-	"github.com/ShinyShield/AbyShopServer/pkg/store"
+	"github.com/ShinyShield/AbyShopServ/config"
+	"github.com/ShinyShield/AbyShopServ/pkg/server"
+	"github.com/ShinyShield/AbyShopServ/pkg/store"
 )
 
 func main() {

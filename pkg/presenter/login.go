@@ -3,7 +3,7 @@ package presenter
 import (
 	"net/http"
 
-	"github.com/ShinyShield/AbyShopServer/pkg/usecases/login"
+	"github.com/ShinyShield/AbyShopServ/pkg/usecases/login"
 	"github.com/labstack/echo"
 )
 

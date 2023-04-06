@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/ShinyShield/AbyShopServer/pkg/presenter"
+	"github.com/ShinyShield/AbyShopServ/pkg/presenter"
 	"github.com/labstack/echo"
 )
 

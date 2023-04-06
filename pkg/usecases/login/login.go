@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ShinyShield/AbyShopServer/pkg/entities"
-	"github.com/ShinyShield/AbyShopServer/pkg/store"
-	"github.com/ShinyShield/AbyShopServer/pkg/util"
+	"github.com/ShinyShield/AbyShopServ/pkg/entities"
+	"github.com/ShinyShield/AbyShopServ/pkg/store"
+	"github.com/ShinyShield/AbyShopServ/pkg/util"
 )
 
 type Input struct {

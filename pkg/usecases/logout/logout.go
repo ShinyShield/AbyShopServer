@@ -5,8 +5,8 @@ import (
 
 	"github.com/jinzhu/gorm"
 
-	"github.com/ShinyShield/AbyShopServer/pkg/entities"
-	"github.com/ShinyShield/AbyShopServer/pkg/store"
+	"github.com/ShinyShield/AbyShopServ/pkg/entities"
+	"github.com/ShinyShield/AbyShopServ/pkg/store"
 )
 
 type Input struct {
