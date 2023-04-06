@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/spf13/viper"
@@ -34,10 +33,10 @@ func Init() {
 	v.SetConfigName("config")
 	v.AddConfigPath(".")
 
-	err := v.ReadInConfig()
+	/*err := v.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
-	}
+	}*/
 
 	v.Unmarshal(&c)
 }

@@ -28,9 +28,11 @@ func mysqlSource(config *config.DatabaseConfig) string {
 	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=true&loc=UTC&multiStatements=true",
 		config.Username,
 		config.Password,
+		config.Name,
 		config.Host,
 		config.Port,
-		config.Name,
 		config.Encoding,
 	)
+	//	return fmt.Sprintf(":"+config.Username+"@tcp("+config.Password+":"+config.Name+")/"+config.Host+"?charset="++"&parseTime=true&loc=UTC&multiStatements=true",
+	//"%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=true&loc=UTC&multiStatements=true"
 }
