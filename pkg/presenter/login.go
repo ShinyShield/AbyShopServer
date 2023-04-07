@@ -12,7 +12,7 @@ type LoginParam struct {
 	Password string `json:"password"`
 }
 
-// 登入
+// login
 func Login(ctx echo.Context) error {
 
 	var result Result

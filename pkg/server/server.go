@@ -8,13 +8,13 @@ import (
 func Init() {
 
 	e := echo.New()
-	// 註冊中間件
+	//
 	e.Use(
 		middleware.Recover(),
 		middleware.CORS(),
 		middleware.Logger(),
 	)
-	// 註冊各個 route
+	//  route
 	generalRoute(e)
 	memberRoute(e, memberMiddleware)
 

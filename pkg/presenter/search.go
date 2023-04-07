@@ -11,7 +11,6 @@ type SearchParam struct {
 	Query string `query:"q"`
 }
 
-// 搜尋某產品關鍵字
 func Search(ctx echo.Context) error {
 
 	var result Result

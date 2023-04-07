@@ -8,7 +8,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-// 搜尋某產品關鍵字
 func QueryProduct(ctx echo.Context) error {
 
 	var result Result

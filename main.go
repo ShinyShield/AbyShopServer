@@ -7,10 +7,8 @@ import (
 )
 
 func main() {
-	// 初始化設定檔案
+
 	config.Init()
-	// 初始化資料庫
 	server.Init()
 	store.Init()
-	// 初始化伺服器
 }

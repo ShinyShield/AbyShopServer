@@ -5,7 +5,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-// 不必登入的 route
+// route
 func generalRoute(e *echo.Echo) {
 	e.GET("/main", presenter.MainPage)
 	e.GET("/search", presenter.Search)
@@ -14,7 +14,7 @@ func generalRoute(e *echo.Echo) {
 	e.POST("/login", presenter.Login)
 }
 
-// 會員的 route
+// route
 func memberRoute(e *echo.Echo, middlewares ...echo.MiddlewareFunc) {
 	routers := e.Group("/member", middlewares...)
 

@@ -20,7 +20,6 @@ func Exec(input Input) error {
 
 	var product entities.Product
 
-	// 先檢查目前的購買的數量是否大於最大購買量，以及是否庫存足夠
 	query := tx.Model(entities.Product{}).
 		Where("id = ?", input.ProductID).
 		Scan(&product)

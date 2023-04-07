@@ -9,13 +9,13 @@ import (
 	"github.com/labstack/echo"
 )
 
-// 檢查 tolken 部分
+// token
 func memberMiddleware(hfc echo.HandlerFunc) echo.HandlerFunc {
 	return func(ctx echo.Context) error {
 
 		var result presenter.Result
 
-		// 從 Header 當中取出 token
+		//  Header  token
 		token := ctx.Request().Header.Get("Authorization")
 		if token == "" {
 			result.Code = presenter.StatusTokenError
@@ -24,7 +24,7 @@ func memberMiddleware(hfc echo.HandlerFunc) echo.HandlerFunc {
 
 		account := new(entities.Account)
 
-		// 檢查 token
+		//  token
 		query := store.DB.Model(entities.Account{}).
 			Where("token = ?", token).
 			First(account)

@@ -34,7 +34,7 @@ func Exec(input Input) (OutPut, error) {
 		return output, errors.New("can't find account")
 	}
 
-	// 如果帳號密碼都存在並且正確，產生一組 token，寫入資料庫，並且回傳 token 給使用者
+	// token
 	token, err := util.CreateToken(input.Email, input.Password)
 	if err != nil {
 		fmt.Println(err.Error())
