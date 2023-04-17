@@ -1,9 +1,6 @@
 package store
 
 import (
-	"fmt"
-
-	"github.com/ShinyShield/AbyShopServ/config"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -11,28 +8,19 @@ import (
 
 var DB *gorm.DB
 
-func Init() {
-
-	databasesConfig := config.GetDatabaseConfig()
-
+func Init() error {
 	var err error
-	DB, err = gorm.Open("mysql", mysqlSource(&databasesConfig))
+	//databasesConfig := config.GetDatabaseConfig()
+
+	DB, err = gorm.Open("mysql", "root:admin@tcp(localhost:3306)/abyshopdb?charset=&parseTime=true&loc=UTC&multiStatements=true")
+	/* mysqlSource(&databasesConfig))*/
 	if err != nil {
-		panic("init mysql failed: " + err.Error())
+		return err
 	}
 
-	DB.LogMode(databasesConfig.Logmode)
+	//DB.LogMode(databasesConfig.Logmode)
+	return nil
 }
-
-func mysqlSource(config *config.DatabaseConfig) string {
-	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=true&loc=UTC&multiStatements=true",
-		config.Username,
-		config.Password,
-		config.Name,
-		config.Host,
-		config.Port,
-		config.Encoding,
-	)
-	//	return fmt.Sprintf(":"+config.Username+"@tcp("+config.Password+":"+config.Name+")/"+config.Host+"?charset="++"&parseTime=true&loc=UTC&multiStatements=true",
-	//"%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=true&loc=UTC&multiStatements=true"
+func Close() {
+	DB.Close()
 }
