@@ -8,13 +8,13 @@ import (
 func Init() {
 
 	e := echo.New()
-	//
+
 	e.Use(
 		middleware.Recover(),
 		middleware.CORS(),
 		middleware.Logger(),
 	)
-	//  route
+
 	generalRoute(e)
 	memberRoute(e, memberMiddleware)
 

@@ -1,46 +1,31 @@
 package config
 
 import (
-	"strings"
-
+	"database/sql"
+	"fmt"
+	"github.com/go-sql-driver/mysql"
 	"github.com/spf13/viper"
+	"log"
 )
 
-var c config
-
-type config struct {
-	Database DatabaseConfig
-}
-
-type DatabaseConfig struct {
-	Username     string
-	Password     string
-	Name         string
-	Host         string
-	Port         uint64
-	Encoding     string
-	Maxconns     uint64
-	Maxidleconns uint64
-	Timeout      uint64
-	Logmode      bool
+var cfg = mysql.Config{
+	User:   "root",
+	Passwd: "admin",
+	Net:    "tcp",
+	Addr:   "localhost:3306",
+	DBName: "abyshopdb",
 }
 
 // init database
 func Init() {
 	v := viper.New()
-	v.AutomaticEnv()
-	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-	v.SetConfigName("config")
-	v.AddConfigPath(".")
 
-	/*err := v.ReadInConfig()
+	var err error
+	db, err := sql.Open("mysql", cfg.FormatDSN())
 	if err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
-	}*/
+		log.Fatal(err)
+	}
 
-	v.Unmarshal(&c)
-}
-
-func GetDatabaseConfig() DatabaseConfig {
-	return c.Database
+	fmt.Println("Connected!")
+	v.Unmarshal(db)
 }
